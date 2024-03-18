@@ -34,7 +34,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 
 app.get("/test", (req, res) => {
-  res.status(200).send("hello welcome to musa market");
+  res.status(200).send("hello welcome to musa render market");
 });
 
 app.use("/api/v1/user", userRouter);
