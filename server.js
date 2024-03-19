@@ -1,9 +1,9 @@
 const app = require("./app");
 const mongoose = require("mongoose");
 
-const connectToMongo = () => {
+const connectToMongo = async () => {
   const cs = process.env.MONGODB_CS;
-  mongoose
+   await mongoose
     .connect(cs, {
       useUnifiedTopology: true,
       useNewUrlParser: true,
