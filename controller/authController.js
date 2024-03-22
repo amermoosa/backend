@@ -9,24 +9,9 @@ const createActivationToken = (user) => {
   return jwt.sign(user, process.env.ACTIVATION_SECRET, { expiresIn: "10m" });
 };
 
-const sendJwtToken = (userId) => {
-  return jwt.sign(
-    {
-      id: userId,
-    },
-    process.env.JWT_SECRET,
-    {
-      expiresIn: process.env.JWT_SECRET_EXP,
-    }
-  );
-};
 
-const cookieOptions = {
-  expires: new Date(Date.now() + 60 * 24 * 60 * 60 * 1000),
-  httpsOnly: true,
-  sameSite: "none",
-  secure: true,
-};
+
+
 
 // Register a new
 exports.register = catchAsync(async (req, res, next) => {
