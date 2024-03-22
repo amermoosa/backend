@@ -23,9 +23,9 @@ const sendJwtToken = (userId) => {
 
 const cookieOptions = {
   expires: new Date(Date.now() + 60 * 24 * 60 * 60 * 1000),
-  httpOnly: false,
+  httpsOnly: true,
   sameSite: "none",
-  secure: false,
+  secure: true,
 };
 
 // Register a new
