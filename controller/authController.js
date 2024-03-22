@@ -9,6 +9,21 @@ const createActivationToken = (user) => {
   return jwt.sign(user, process.env.ACTIVATION_SECRET, { expiresIn: "10m" });
 };
 
+const createActivationToken = (user) => {
+  return jwt.sign(user, process.env.ACTIVATION_SECRET, { expiresIn: "10m" });
+};
+
+const sendJwtToken = (userId) => {
+  return jwt.sign(
+    {
+      id: userId,
+    },
+    process.env.JWT_SECRET,
+    {
+      expiresIn: process.env.JWT_SECRET_EXP,
+    }
+  );
+};
 
 
 
