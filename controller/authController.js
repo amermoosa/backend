@@ -50,7 +50,7 @@ exports.register = catchAsync(async (req, res, next) => {
   });
 
   // 4. Trigger notifaction to send email
-  await novu.trigger("account-activation", {
+  await novu.trigger("account-activation-GSdnPLzrg", {
     to: {
       subscriberId: storename,
     },
