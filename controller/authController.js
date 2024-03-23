@@ -242,7 +242,7 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
   res.status(200).cookie("bk_token", jwtToken, cookieOptions).json({
     success: true,
     token: jwtToken,
- });
+  });
 });
 
 //Load user
