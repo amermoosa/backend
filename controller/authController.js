@@ -237,12 +237,12 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
   await user.save();
 
   // 4. log user in, send jwt
-  const jwtToken = sendJwtToken(user._id);
+  //const jwtToken = sendJwtToken(user._id);
 
-  res.status(200).cookie("bk_token", jwtToken, cookieOptions).json({
-    success: true,
-    token: jwtToken,
-  });
+  //res.status(200).cookie("bk_token", jwtToken, cookieOptions).json({
+    //success: true,
+    //token: jwtToken,
+ //});
 });
 
 //Load user
