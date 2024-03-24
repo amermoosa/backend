@@ -24,16 +24,8 @@ const sendJwtToken = (userId) => {
 const cookieOptions = {
   expires: new Date(Date.now() + 60 * 24 * 60 * 60 * 1000),
   httpOnly: true,
-  // path = where the cookie is valid
-  path: "/",
-  // domain = what domain the cookie is valid on
-  //domain: "localhost",
-  // secure = only send cookie over https
-  secure: false,
-  // sameSite = only send cookie if the request is coming from the same origin
-  sameSite: "lax", // "strict" | "lax" | "none" (secure must be true)
-  // maxAge = how long the cookie is valid for in milliseconds
-  maxAge: 3600000, // 1 hour
+  sameSite: "none",
+  secure: true,
 };
 
 // Register a new
@@ -268,17 +260,9 @@ exports.loadUser = catchAsync(async (req, res, next) => {
 exports.logoutUser = catchAsync(async (req, res, next) => {
   res.cookie("bk_token", null, {
     expires: new Date(Date.now()),
-    httpOnly: true,
-  // path = where the cookie is valid
-  path: "/",
-  // domain = what domain the cookie is valid on
-  //domain: "localhost",
-  // secure = only send cookie over https
-  secure: false,
-  // sameSite = only send cookie if the request is coming from the same origin
-  sameSite: "lax", // "strict" | "lax" | "none" (secure must be true)
-  // maxAge = how long the cookie is valid for in milliseconds
-  maxAge: 3600000, // 1 hour
+  httpOnly: true,
+    sameSite: "none",
+    secure: true,
   });
 
   res.status(200).json({
