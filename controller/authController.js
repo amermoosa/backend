@@ -24,7 +24,9 @@ const sendJwtToken = (userId) => {
 const cookieOptions = {
   expires: new Date(Date.now() + 60 * 24 * 60 * 60 * 1000),
   httpOnly: true,
+  domain: "http://localhost:4000/api/v1",
   sameSite: "none",
+  path: "/",
   secure: true,
 };
 
