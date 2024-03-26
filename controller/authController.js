@@ -25,7 +25,7 @@ const cookieOptions = {
   expires: new Date(Date.now() + 60 * 24 * 60 * 60 * 1000),
   httpOnly: true,
   sameSite: "lax",
-  secure: false,
+  secure: true,
 };
 
 // Register a new
