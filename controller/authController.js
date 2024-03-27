@@ -24,7 +24,7 @@ const sendJwtToken = (userId) => {
 const cookieOptions = {
   expires: new Date(Date.now() + 60 * 24 * 60 * 60 * 1000),
   httpOnly: true,
-  sameSite: "lax",
+  sameSite: "none",
   secure: true,
 };
 
@@ -261,7 +261,7 @@ exports.logoutUser = catchAsync(async (req, res, next) => {
   res.cookie("bk_token", null, {
     expires: new Date(Date.now()),
   httpOnly: true,
-  sameSite: "lax",
+  sameSite: "none",
   secure: true,
   });
 
