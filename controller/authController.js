@@ -25,7 +25,7 @@ const cookieOptions = {
   expires: new Date(Date.now() + 60 * 24 * 60 * 60 * 1000),
   httpOnly: true,
   sameSite: "lax",
-  secure: false,
+  secure: true,
 };
 
 // Register a new
@@ -262,7 +262,7 @@ exports.logoutUser = catchAsync(async (req, res, next) => {
     expires: new Date(Date.now()),
   httpOnly: true,
   sameSite: "lax",
-  secure: false,
+  secure: true,
   });
 
   res.status(200).json({
